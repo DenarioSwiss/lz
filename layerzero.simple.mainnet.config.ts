@@ -3,21 +3,24 @@ import { ExecutorOptionType } from '@layerzerolabs/lz-v2-utilities'
 import { generateConnectionsConfig } from '@layerzerolabs/metadata-tools'
 import { OAppEnforcedOption, OmniPointHardhat } from '@layerzerolabs/toolbox-hardhat'
 
+const upgradableOFTAdapter = 'DenarioSilverOFTAdapterUpgradeable'
+const upgradableOFT = 'DenarioSilverOFTUpgradeable'
+
 const polygonContract: OmniPointHardhat = {
     eid: EndpointId.POLYGON_MAINNET,
-    contractName: 'DenarioSilverOFTAdapter',
+    contractName: upgradableOFTAdapter,
 }
 const plumeContract: OmniPointHardhat = {
     eid: EndpointId.PLUME_MAINNET,
-    contractName: 'DenarioSilverOFT',
+    contractName: upgradableOFT,
 }
 const optimismContract: OmniPointHardhat = {
     eid: EndpointId.OPTIMISM_V2_MAINNET,
-    contractName: 'DenarioSilverOFT',
+    contractName: upgradableOFT,
 }
 const arbitrumContract: OmniPointHardhat = {
     eid: EndpointId.ARBITRUM_MAINNET,
-    contractName: 'DenarioSilverOFT',
+    contractName: upgradableOFT,
 }
 
 const EVM_ENFORCED_OPTIONS: OAppEnforcedOption[] = [

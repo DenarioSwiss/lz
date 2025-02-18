@@ -9,19 +9,14 @@ import 'hardhat-deploy'
 import 'hardhat-contract-sizer'
 import '@nomiclabs/hardhat-ethers'
 import '@layerzerolabs/toolbox-hardhat'
+
 import { HardhatUserConfig, HttpNetworkAccountsUserConfig } from 'hardhat/types'
 
 import { EndpointId } from '@layerzerolabs/lz-definitions'
 
 import './type-extensions'
 
-// Set your preferred authentication method
-//
-// If you prefer using a mnemonic, set a MNEMONIC environment variable
-// to a valid mnemonic
 const MNEMONIC = process.env.MNEMONIC
-
-// If you prefer to be authenticated using a private key, set a PRIVATE_KEY environment variable
 const PRIVATE_KEY = process.env.PRIVATE_KEY
 
 const accounts: HttpNetworkAccountsUserConfig | undefined = MNEMONIC
@@ -58,7 +53,7 @@ const config: HardhatUserConfig = {
         // MAINNET DEPLOYMENT
         //
         polygon: {
-            eid: EndpointId.POLYGON_MAINNET,
+            eid: EndpointId.POLYGON_V2_MAINNET,
             url: process.env.RPC_URL_POLYGON,
             accounts,
             oftAdapter: {
@@ -67,21 +62,21 @@ const config: HardhatUserConfig = {
         },
         optimism: {
             eid: EndpointId.OPTIMISM_V2_MAINNET,
-            url: process.env.RPC_URL_OPTIMISM_V2,
+            url: process.env.RPC_URL_OPTIMISM,
             accounts,
         },
         arbitrum: {
-            eid: EndpointId.ARBITRUM_MAINNET,
+            eid: EndpointId.ARBITRUM_V2_MAINNET,
             url: process.env.RPC_URL_ARBITRUM,
             accounts,
         },
         ethereum: {
-            eid: EndpointId.ETHEREUM_MAINNET,
+            eid: EndpointId.ETHEREUM_V2_MAINNET,
             url: process.env.RPC_URL_ETHEREUM,
             accounts,
         },
         plume: {
-            eid: EndpointId.PLUME_MAINNET,
+            eid: EndpointId.PLUME_V2_MAINNET,
             url: process.env.RPC_URL_PLUME,
             accounts,
         },
@@ -99,22 +94,22 @@ const config: HardhatUserConfig = {
         // apparently there is no plume testnet providing layerzero.
         // we will use arbitrum sepolia for testing.
         // 'plume-devnet': {
-        //     eid: EndpointId.PLUME_TESTNET,
+        //     eid: EndpointId.PLUME_V2_TESTNET,
         //     url: process.env.RPC_URL_PLUME || 'https://test-rpc.plumenetwork.xyz',
         //     accounts,
         // },
         'optimism-testnet': {
             eid: EndpointId.OPTIMISM_V2_TESTNET,
-            url: process.env.RPC_URL_OPTIMISM_V2_TESTNET,
+            url: process.env.RPC_URL_OPTIMISM_TESTNET,
             accounts,
         },
         'arbitrum-testnet': {
-            eid: EndpointId.ARBITRUM_TESTNET,
+            eid: EndpointId.ARBSEP_V2_TESTNET,
             url: process.env.RPC_URL_ARBITRUM_TESTNET,
             accounts,
         },
         sepolia: {
-            eid: EndpointId.SEPOLIA_TESTNET,
+            eid: EndpointId.SEPOLIA_V2_TESTNET,
             url: process.env.RPC_URL_SEPOLIA,
             accounts,
         },
