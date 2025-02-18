@@ -4,8 +4,10 @@
 // - Duplicate .env.example file and name it .env
 // - Fill in the environment variables
 import 'dotenv/config'
-
+import '@openzeppelin/hardhat-upgrades'
 import 'hardhat-deploy'
+import '@nomiclabs/hardhat-waffle'
+import 'hardhat-deploy-ethers'
 import 'hardhat-contract-sizer'
 import '@nomiclabs/hardhat-ethers'
 import '@layerzerolabs/toolbox-hardhat'
@@ -52,7 +54,7 @@ const config: HardhatUserConfig = {
         //
         // MAINNET DEPLOYMENT
         //
-        polygon: {
+        'polygon-mainnet': {
             eid: EndpointId.POLYGON_V2_MAINNET,
             url: process.env.RPC_URL_POLYGON,
             accounts,
@@ -60,22 +62,22 @@ const config: HardhatUserConfig = {
                 tokenAddress: process.env.DSC_POLYGON || '',
             },
         },
-        optimism: {
+        'optimism-mainnet': {
             eid: EndpointId.OPTIMISM_V2_MAINNET,
             url: process.env.RPC_URL_OPTIMISM,
             accounts,
         },
-        arbitrum: {
+        'arbitrum-mainnet': {
             eid: EndpointId.ARBITRUM_V2_MAINNET,
             url: process.env.RPC_URL_ARBITRUM,
             accounts,
         },
-        ethereum: {
+        'ethereum-mainnet': {
             eid: EndpointId.ETHEREUM_V2_MAINNET,
             url: process.env.RPC_URL_ETHEREUM,
             accounts,
         },
-        plume: {
+        'plume-mainnet': {
             eid: EndpointId.PLUME_V2_MAINNET,
             url: process.env.RPC_URL_PLUME,
             accounts,
@@ -83,7 +85,7 @@ const config: HardhatUserConfig = {
         //
         // TESTNET DEPLOYMENT
         //
-        'polygon-amoy': {
+        'amoy-testnet': {
             eid: EndpointId.AMOY_V2_TESTNET,
             url: process.env.RPC_URL_AMOY || 'https://polygon-amoy-bor-rpc.publicnode.com',
             accounts,
@@ -98,17 +100,17 @@ const config: HardhatUserConfig = {
         //     url: process.env.RPC_URL_PLUME || 'https://test-rpc.plumenetwork.xyz',
         //     accounts,
         // },
-        'optimism-testnet': {
+        'optsep-testnet': {
             eid: EndpointId.OPTIMISM_V2_TESTNET,
             url: process.env.RPC_URL_OPTIMISM_TESTNET,
             accounts,
         },
-        'arbitrum-testnet': {
+        'arbsep-testnet': {
             eid: EndpointId.ARBSEP_V2_TESTNET,
             url: process.env.RPC_URL_ARBITRUM_TESTNET,
             accounts,
         },
-        sepolia: {
+        'sepolia-testnet': {
             eid: EndpointId.SEPOLIA_V2_TESTNET,
             url: process.env.RPC_URL_SEPOLIA,
             accounts,

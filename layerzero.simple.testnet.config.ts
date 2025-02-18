@@ -3,17 +3,20 @@ import { ExecutorOptionType } from '@layerzerolabs/lz-v2-utilities'
 import { generateConnectionsConfig } from '@layerzerolabs/metadata-tools'
 import { OAppEnforcedOption, OmniPointHardhat } from '@layerzerolabs/toolbox-hardhat'
 
+const upgradableOFTAdapter = 'DenarioSilverOFTAdapterUpgradeable'
+const upgradableOFT = 'DenarioSilverOFTUpgradeable'
+
 const amoyContract: OmniPointHardhat = {
     eid: EndpointId.AMOY_V2_TESTNET,
-    contractName: 'DenarioSilverOFTAdapter',
+    contractName: upgradableOFTAdapter,
 }
 const optimismContract: OmniPointHardhat = {
     eid: EndpointId.OPTIMISM_V2_TESTNET,
-    contractName: 'DenarioSilverOFT',
+    contractName: upgradableOFT,
 }
 const arbitrumContract: OmniPointHardhat = {
     eid: EndpointId.ARBITRUM_TESTNET,
-    contractName: 'DenarioSilverOFT',
+    contractName: upgradableOFT,
 }
 // currently there is no layerzero contract deployment on testnet
 // const plumeTestnetContract: OmniPointHardhat = {
