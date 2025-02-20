@@ -101,7 +101,7 @@ const config: HardhatUserConfig = {
         //     accounts,
         // },
         'optsep-testnet': {
-            eid: EndpointId.OPTIMISM_V2_TESTNET,
+            eid: EndpointId.OPTSEP_V2_TESTNET,
             url: process.env.RPC_URL_OPTIMISM_TESTNET,
             accounts,
         },

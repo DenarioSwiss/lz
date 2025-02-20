@@ -11,11 +11,11 @@ const amoyContract: OmniPointHardhat = {
     contractName: upgradableOFTAdapter,
 }
 const optimismContract: OmniPointHardhat = {
-    eid: EndpointId.OPTIMISM_V2_TESTNET,
+    eid: EndpointId.OPTSEP_V2_TESTNET,
     contractName: upgradableOFT,
 }
 const arbitrumContract: OmniPointHardhat = {
-    eid: EndpointId.ARBITRUM_TESTNET,
+    eid: EndpointId.ARBSEP_V2_TESTNET,
     contractName: upgradableOFT,
 }
 // currently there is no layerzero contract deployment on testnet
