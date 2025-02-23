@@ -59,7 +59,7 @@ const config: HardhatUserConfig = {
             url: process.env.RPC_URL_POLYGON,
             accounts,
             oftAdapter: {
-                tokenAddress: process.env.DSC_POLYGON || '',
+                tokenAddress: process.env.DSC_AMOY || '',
             },
         },
         'optimism-mainnet': {

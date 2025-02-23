@@ -51,8 +51,11 @@ Preconditions:
 
 5. test rpc config: `npx hardhat lz:healthcheck:validate:rpcs`.
 
-6. deploy to testnets: `npx hardhat lz:deploy` and select networks to deploy to.
+6. deploy to testnets
 
-7. npx hardhat lz:oapp:config:wire --oapp-config YOUR_OAPP_CONFIG
-8. npx hardhat lz:oapp:config:get --oapp-config YOUR_OAPP_CONFIG
-9. npx hardhat lz:oapp:config:get:executor --oapp-config YOUR_OAPP_CONFIG
+- `npx hardhat lz:deploy` and select networks to deploy to.
+- `npx hardhat lz:oapp:config:wire --oapp-config layerzero.simple.testnet.config.json`
+- `npx hardhat lz:oapp:config:get --oapp-config layerzero.simple.testnet.config.json`
+- `npx hardhat lz:oapp:config:get:executor --networks amoy-testnet,arbsep-testnet,optsep-testnet`
+
+.
