@@ -13,6 +13,11 @@ const deploy: DeployFunction = async (hre) => {
     const { deployer } = await getNamedAccounts()
     assert(deployer, 'Missing named deployer account')
 
+    if (hre.network.config.oftAdapter !== null) {
+        console.warn(`oftAdapter configured on network config, skipping OFTWrapper deployment`)
+        return
+    }
+
     const signer = (await hre.ethers.getSigners())[0]
     assert(deployer, 'Missing signer account')
 

@@ -9,9 +9,9 @@ import 'hardhat-deploy'
 import '@nomiclabs/hardhat-waffle'
 import 'hardhat-deploy-ethers'
 import 'hardhat-contract-sizer'
-import '@nomiclabs/hardhat-ethers'
 import '@layerzerolabs/toolbox-hardhat'
-
+import '@nomiclabs/hardhat-ethers'
+import { task } from 'hardhat/config'
 import { HardhatUserConfig, HttpNetworkAccountsUserConfig } from 'hardhat/types'
 
 import { EndpointId } from '@layerzerolabs/lz-definitions'
@@ -32,6 +32,21 @@ if (accounts == null) {
         'Could not find MNEMONIC or PRIVATE_KEY environment variables. It will not be possible to execute transactions in your example.'
     )
 }
+
+//
+// custom tasks
+//
+
+task('dsc:balance', "Prints an account's DSC balance")
+    .addParam('account', "The account's address")
+    .setAction(async (taskArgs) => {
+        const balance = await ethers.provider.getBalance(taskArgs.account)
+        console.log(ethers.utils.formatEther(balance), 'ETH')
+    })
+
+//
+//
+//
 
 const config: HardhatUserConfig = {
     paths: {
@@ -59,7 +74,7 @@ const config: HardhatUserConfig = {
             url: process.env.RPC_URL_POLYGON,
             accounts,
             oftAdapter: {
-                tokenAddress: process.env.DSC_AMOY || '',
+                tokenAddress: process.env.DSC_POLYGON || '',
             },
         },
         'optimism-mainnet': {

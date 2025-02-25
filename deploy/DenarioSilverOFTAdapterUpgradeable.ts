@@ -14,7 +14,7 @@ const deploy: DeployFunction = async (hre) => {
     assert(deployer, 'Missing named deployer account')
 
     if (hre.network.config.oftAdapter == null) {
-        console.warn(`oftAdapter not configured on network config, skipping OFTWrapper deployment`)
+        console.warn(`oftAdapter not configured on network config, skipping OFTAdapter deployment`)
         return
     }
     const { tokenAddress } = hre.network.config.oftAdapter
